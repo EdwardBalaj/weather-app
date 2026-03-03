@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: weather-fetcher
+  labels:
+    app: weather-fetcher
+spec:
+  restartPolicy: Never
+  containers:
+    - name: weather
+      image: weather-app:latest          # replace with your registry/image after docker build
+      imagePullPolicy: IfNotPresent
+      env:
+        - name: CITY
+          value: "London"               # change to any city, e.g. "Tokyo", "New York"
+      resources:
+        requests:
+          cpu: "50m"
+          memory: "32Mi"
+        limits:
+          cpu: "100m"
+          memory: "64Mi"
