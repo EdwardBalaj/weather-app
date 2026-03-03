@@ -4,7 +4,7 @@ import json
 import os
 import sys
 
-CITY = os.environ.get("CITY", "London")
+CITY = os.environ.get("CITY", "Berlin")
 URL = f"https://wttr.in/{CITY}?format=j1"
 
 def get_weather():
