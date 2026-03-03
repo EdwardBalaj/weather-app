@@ -4,7 +4,7 @@ import json
 import os
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
-CITY = os.environ.get("CITY", "Berlin")
+CITY = "Madrid"
 URL = f"https://wttr.in/{CITY}?format=j1"
 
 
