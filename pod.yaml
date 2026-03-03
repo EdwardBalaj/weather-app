@@ -6,14 +6,16 @@ metadata:
   labels:
     app: weather-fetcher
 spec:
-  restartPolicy: Never
+  restartPolicy: Always
   containers:
     - name: weather
-      image: weather-app:latest          # replace with your registry/image after docker build
+      image: weather-app:latest
       imagePullPolicy: IfNotPresent
+      ports:
+        - containerPort: 8080
       env:
         - name: CITY
-          value: "London"               # change to any city, e.g. "Tokyo", "New York"
+          value: "Berlin"
       resources:
         requests:
           cpu: "50m"
